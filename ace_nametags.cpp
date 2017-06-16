@@ -32,19 +32,27 @@ int __cdecl intercept::api_version() {
     return 1;
 }
 
+game_value render() {
+    tagger.on_frame();
+    return{};
+}
+
 void __cdecl intercept::on_frame() {
     tagger.on_frame();
 }
 
 
-void __cdecl intercept::post_init() {
-
+void __cdecl intercept::pre_init() {
+    sqf::set_variable(sqf::mission_namespace(), "ACE_Intercept_Nametags", sqf::compile("InterceptNameTagRender"));
 }
 
 void __cdecl intercept::mission_stopped() {
 
 }
+void __cdecl intercept::pre_start() {
+    static auto fnc = client::host::registerFunction("InterceptNameTagRender"_sv, "", userFunctionWrapper<render>, GameDataType::NOTHING);
 
+}
 BOOL APIENTRY DllMain(HMODULE hModule,
     DWORD  ul_reason_for_call,
     LPVOID lpReserved
