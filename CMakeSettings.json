@@ -1,0 +1,45 @@
+{
+    // Informationen zu dieser Datei finden Sie unter https://go.microsoft.com//fwlink//?linkid=834763.
+    "configurations": [
+      {
+        "name": "x86-Debug",
+        "generator": "Visual Studio 15 2017",
+        "configurationType": "Debug",
+        "referenceContexts": [ "msvc_x86" ],
+        "buildRoot": "${env.LOCALAPPDATA}\\CMakeBuild\\${workspaceHash}\\build\\${name}",
+        "cmakeCommandArgs": "",
+        "buildCommandArgs": "-v",
+        "ctestCommandArgs": ""
+      },
+      {
+        "name": "x86-Release",
+        "generator": "Visual Studio 15 2017",
+        "configurationType": "RelWithDebInfo",
+        "referenceContexts": [ "msvc_x86" ],
+        "buildRoot": "${env.LOCALAPPDATA}\\CMakeBuild\\${workspaceHash}\\build\\${name}",
+        "cmakeCommandArgs": "",
+        "buildCommandArgs": "-v",
+        "ctestCommandArgs": ""
+      },
+      {
+        "name": "x64-Debug",
+        "generator": "Ninja",
+        "configurationType": "Debug",
+        "referenceContexts": [ "msvc_x64" ],
+        "buildRoot": "${env.LOCALAPPDATA}\\CMakeBuild\\${workspaceHash}\\build\\${name}",
+        "cmakeCommandArgs": "",
+        "buildCommandArgs": "-v",
+        "ctestCommandArgs": ""
+      },
+      {
+        "name": "x64-Release",
+        "generator": "Ninja",
+        "configurationType": "RelWithDebInfo",
+        "referenceContexts": [ "msvc_x64" ],
+        "buildRoot": "${env.LOCALAPPDATA}\\CMakeBuild\\${workspaceHash}\\build\\${name}",
+        "cmakeCommandArgs": "",
+        "buildCommandArgs": "-v",
+        "ctestCommandArgs": ""
+      }
+    ]
+}
